@@ -1,0 +1,150 @@
+:root {
+    /* Uncomment the theme you want to use */
+
+    /* 🌸 Elegant Soft Pink Theme */
+    /* --bg-color: #FFF5F7;
+    --form-bg: #FDE2E4;
+    --text-color: #4A4A4A;
+    --border-color: #D3A7A2;
+    --button-bg: #FF8BA7;
+    --button-hover: #D67589;
+    --button-text: #FFFFFF; */
+
+    /* 🔵 Modern Blue & White Theme */
+    --bg-color: #F0F8FF;
+    --form-bg: #E3F2FD;
+    --text-color: #333333;
+    --border-color: #90CAF9;
+    --button-bg: #1976D2;
+    --button-hover: #0D47A1;
+    --button-text: #FFFFFF;
+
+    /* 🍃 Pastel Mint Green Theme */
+    /* --bg-color: #E8F5E9;
+    --form-bg: #D0F0C0;
+    --text-color: #2E7D32;
+    --border-color: #A5D6A7;
+    --button-bg: #66BB6A;
+    --button-hover: #388E3C;
+    --button-text: #FFFFFF; */
+
+    /* 🌑 Sleek Dark Mode Theme */
+    /* --bg-color: #121212;
+    --form-bg: #1E1E1E;
+    --text-color: #E0E0E0;
+    --border-color: #424242;
+    --button-bg: #BB86FC;
+    --button-hover: #9B6BFC;
+    --button-text: #FFFFFF; */
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200vh;
+    background: var(--bg-color);
+}
+
+.form-container {
+    width: 50%;
+    margin: 40px auto;
+    background: var(--form-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--border-color);
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    font-weight: 600;
+    margin-top: 15px;
+    color: var(--text-color);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+button {
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: var(--button-hover);
+}
+
+/* Styles for the dropdown */
+.dropdown {
+    position: absolute;
+    max-height: 200px; /* Adjust this value based on the number of items */
+    width: 50%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    overflow-y: auto; /* Makes it scrollable */
+    padding: 5px 0;
+    margin-top: 5px;
+}
+
+/* Styles for each list item */
+.dropdown li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Styles for the input field */
+input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+

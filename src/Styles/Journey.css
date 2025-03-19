@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Theme Variables */
+:root {
+    /* Change this value to switch themes: options - "blue-white", "pink-gray", "dark-mode" */
+    --theme: "blue-white";
+
+    /* Default - Modern Blue & White Theme */
+    --background-color: #F0F8FF;
+    --card-background: #E3F2FD;
+    --form-background: #E3F2FD;
+    --navbar-background: #E3F2FD;
+    --stat-background: #BBDEFB;
+    --button-background: #90CAF9;
+    --button-hover: #1E88E5;
+    --text-primary: #333333;
+    --text-secondary: #1E88E5;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --highlight-color: #1565C0;
+}
+
+/* Apply themes dynamically */
+@media (prefers-color-scheme: dark) {
+    [data-theme="dark-mode"] {
+        --background-color: #1F2937;
+        --card-background: #374151;
+        --form-background: #4B5563;
+        --navbar-background: #374151;
+        --stat-background: #4B5563;
+        --button-background: #60A5FA;
+        --button-hover: #3B82F6;
+        --text-primary: #E5E7EB;
+        --text-secondary: #60A5FA;
+        --shadow-color: rgba(0, 0, 0, 0.3);
+        --highlight-color: #3B82F6;
+    }
+}
+
+[data-theme="pink-gray"] {
+    --background-color: #FFF0F3;
+    --card-background: #FFD6E0;
+    --form-background: #FFD6E0;
+    --navbar-background: #FFC1E3;
+    --stat-background: #F8BBD0;
+    --button-background: #D81B60;
+    --button-hover: #AD1457;
+    --text-primary: #4A4A4A;
+    --text-secondary: #D81B60;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --highlight-color: #AD1457;
+}
+
+/* Forms */
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background: var(--background-color);
+}
+
+.form-container {
+    width: 50%;
+    margin: 40px auto;
+    background: var(--form-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    font-weight: 600;
+    margin-top: 15px;
+    color: var(--text-primary);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--button-background);
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+button {
+    background: var(--button-background);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: var(--button-hover);
+}
+
+/* Testimonials */
+.testimonials-container {
+    display: grid;
+    width: 70%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 35px;
+    padding: 20px;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 12px;
+    background: var(--card-background);
+    box-shadow: 0 4px 10px var(--shadow-color);
+    text-align: center;
+}
+
+.testimonial-card {
+    background: var(--card-background);
+}
+
+.stat-card {
+    background: var(--stat-background);
+    font-weight: bold;
+}
+
+.rating {
+    color: var(--highlight-color);
+    font-size: 18px;
+}
+
+.value {
+    font-size: 32px;
+    color: var(--highlight-color);
+    font-weight: bold;
+}
+
+.label {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.author {
+    font-weight: bold;
+    margin-top: 10px;
+}
