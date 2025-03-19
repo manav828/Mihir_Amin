@@ -1,6 +1,7 @@
 import "../Styles/AboutUs.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Testimonials from "./about_testimonials.js";
+import Footer from "./footer";
 function AboutUsPage() {
   const cardData = [
     {
@@ -37,10 +38,71 @@ function AboutUsPage() {
     },
   ];
 
+  const testimonials = [
+    {
+      stars: 5,
+      quote: "The Perfect Way to Find Candidates",
+      tagline: "Love it!",
+      name: "Jim S.",
+      company: "TJSS Podcast",
+      avatar: "/Images/avatar-jim.png"
+    },
+    {
+      stars: 5,
+      quote: "The algorithm quickly and accurately identifies candidates, saving me hours of searching through various recruitment platforms.",
+      name: "Julie S.",
+      company: "Coralogix",
+      avatar: "/Images/avatar-julie.png"
+    },
+    {
+      stars: 5,
+      quote: "It's like someone just heated up my cold calls. It's pretty perfect",
+      name: "Anat M.",
+      company: "Bringg",
+      avatar: "/Images/avatar-anat.png"
+    },
+    {
+      stars: 5,
+      quote: "Find qualified candidates faster and streamline your sourcing and engagement.",
+      name: "Yogi K.",
+      company: "Reeco",
+      avatar: "/Images/avatar-yogi.png"
+    }
+  ];
+
+  const stats = [
+    {
+      value: "28%",
+      title: "Outreach Reply Rate",
+      subtitle: "Senior Chemist Role",
+      company: "AlphaStaff",
+      backgroundColor: "#ffebee"
+    },
+    {
+      value: "59%",
+      title: "Acceptance Rate",
+      subtitle: "Tax Manager Role",
+      company: "Tax Search",
+      backgroundColor: "#ffebee"
+    },
+    {
+      value: "+5",
+      title: "Successful Hires",
+      subtitle: "-50% Time-to-hire",
+      company: "Mina Group",
+      backgroundColor: "#ffebee"
+    },
+    {
+      value: "+100",
+      title: "Relevant Candidates",
+      subtitle: "in under 90 minutes",
+      company: "Reibus",
+      backgroundColor: "#ffebee"
+    }
+  ];
+
   return (
     <>
-
- 
       {/* Hero Section */}
       <section className="about-hero">
         <div className="container d-flex flex-column flex-md-row align-items-center justify-content-between text-center text-md-start">
@@ -78,68 +140,85 @@ function AboutUsPage() {
             <img src="/Images/c2.svg" alt="Logo 2" className="logo" />
             <img src="/Images/c1.svg" alt="Logo 3" className="logo" />
             <img src="/Images/c2.svg" alt="Logo 4" className="logo" />
-           
           </div>
         </div>
       </section>
       <div className="main">
-      {/* Card Section */}
-      <div className="container-md py-5">
-        <div className="row g-4">
-          {cardData.map((card, index) => (
-            <div className="col-md-6 col-lg-6" key={index}>
-              <div className="card border-0  shadow-sm" style={{ backgroundColor: card.bgColor }}>
-                {/* Conditionally Render Image Above or Below Text */}
-                {index % 2 === 0 ? ( 
-                  // For cards 1 and 3 (index 0 and 2) → Image on top
-                  <>
-                    <img src={card.img} alt={card.title} className="card-img-top mb-3" />
-                    <div className="card-body">
-                      <h4 className="heading">{card.title}</h4>
-                      <p className="white-text">{card.description}</p>
-                      <div className="mt-3">
-                        {card.badges.map((badge, i) => (
-                          <span key={i} className="badge bg-primary me-2">
-                            {badge}
-                          </span>
-                        ))}
+        {/* Card Section */}
+        <div className="container-md py-5">
+          <div className="row g-4">
+            {cardData.map((card, index) => (
+              <div className="col-md-6 col-lg-6" key={index}>
+                <div className="card border-0 shadow-sm" style={{ backgroundColor: card.bgColor }}>
+                  {/* Conditionally Render Image Above or Below Text */}
+                  {index % 2 === 0 ? (
+                    // For cards 1 and 3 (index 0 and 2) → Image on top
+                    <>
+                      <img src={card.img} alt={card.title} className="card-img-top mb-3" />
+                      <div className="card-body">
+                        <h4 className="heading">{card.title}</h4>
+                        <p className="white-text">{card.description}</p>
+                        <div className="mt-3">
+                          {card.badges.map((badge, i) => (
+                            <span key={i} className="badge bg-primary me-2">
+                              {badge}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  </>
-                ) : ( 
-                  // For cards 2 and 4 (index 1 and 3) → Image below text
-                  <>
-                    <div className="card-body">
-                      <h4 className="heading">{card.title}</h4>
-                      <p className="white-text">{card.description}</p>
-                      <div className="mt-3">
-                        {card.badges.map((badge, i) => (
-                          <span key={i} className="badge bg-primary me-2">
-                            {badge}
-                          </span>
-                        ))}
+                    </>
+                  ) : (
+                    // For cards 2 and 4 (index 1 and 3) → Image below text
+                    <>
+                      <div className="card-body">
+                        <h4 className="heading">{card.title}</h4>
+                        <p className="white-text">{card.description}</p>
+                        <div className="mt-3">
+                          {card.badges.map((badge, i) => (
+                            <span key={i} className="badge bg-primary me-2">
+                              {badge}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                    <img src={card.img} alt={card.title} className="card-img-top mt-3" />
-                  </>
-                )}
+                      <img src={card.img} alt={card.title} className="card-img-top mt-3" />
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
-        {/* <img src="quote.png" alt="Quote Mark" class="quote-mark"/> */}
+            ))}
+          </div>
         </div>
-      </div>
-      <section class="testimonial-container">
-    <div class="testimonial-box">
-        <div class="quote-mark">❝</div>
-        <h2 class="testimonial-text">"The Recruiter’s AI Sidekick"</h2>
-        <p class="testimonial-author">Yogi Kidar <span>Founder @ Reeco</span></p>
-        <p class="testimonial-company">Reeco</p>
-    </div>
-</section>
+        <section className="testimonial-container">
+          <div className="testimonial-box">
+            <div className="quote-mark">❝</div>
+            <h2 className="testimonial-text">"The Recruiter's AI Sidekick"</h2>
+            <p className="testimonial-author">Yogi Kidar <span>Founder @ Reeco</span></p>
+            <p className="testimonial-company">Reeco</p>
+          </div>
+        </section>
 
+        <section className="yourPerfect">
+          <div className="textContent">
+            <div className="head">
+              <h1>Find Your Perfect</h1>
+              <h1>Candidate - Every Time.</h1>
+            </div>
+            <div className="subtext">
+              Find the right candidates effortlessly. Collaborate with your team and let AI handle the details. 50% faster hires!
+            </div>
+          </div>
+          <img
+            src="/Images/perfect.png"
+            alt="Find Your Perfect Match"
+            className="about-hero-image img-fluid"
+          />
+        </section>
 
+        {/* Testimonials Section */}
+        <Testimonials />
       </div>
+        <Footer />
     </>
   );
 }
