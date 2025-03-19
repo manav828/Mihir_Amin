@@ -119,7 +119,7 @@ function AboutUsPage() {
             <button className="about-hero-button">Connect with me</button>
           </div>
           <img
-            src="/Images/avatar.svg"
+            src="/Images/mihir.jpg"
             alt="Mihir Amin"
             className="about-hero-image img-fluid"
           />
