@@ -1,0 +1,211 @@
+.booking-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 40px;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  /* Left Side - Image */
+  .booking-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+  }
+  
+  /* Right Side - Form */
+  .booking-form {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Form Styling */
+  .input-flex {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .input-flex div {
+    flex: 1;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .textarea-field {
+    margin-top: 15px;
+  }
+  
+  .form-btn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .form-btn:hover {
+    background: #0056b3;
+  }
+  
+
+
+
+  .progress-bar {
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 10px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background: linear-gradient(to right, #6c63ff, #584bff);
+    transition: width 0.3s ease-in-out;
+  }
+
+
+
+
+  .row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Container Layout */
+.booking-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+  }
+  
+  /* Image Section */
+  .booking-image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .booking-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Form Section */
+  .booking-form {
+    flex: 1;
+    max-width: 600px;
+  }
+  
+  /* Input Flex for Side-by-side Fields */
+  .input-flex {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .input-flex div {
+    flex: 1;
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 10px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background: linear-gradient(to right, #6c63ff, #584bff);
+    transition: width 0.3s ease-in-out;
+  }
+  
+  /* Form Buttons */
+  .form-btn {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .form-btn:hover {
+    background-color: #574bfa;
+  }
+  
+  /* No Slot Available */
+  .no-slot {
+    color: red;
+    margin-top: 10px;
+  }
+  /* Responsive Design */
+@media (max-width: 768px) {
+    .booking-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .booking-image {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  
+    .booking-form {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .input-flex {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .form-btn {
+      width: 100%;
+      padding: 14px;
+    }
+  
+    .progress-bar {
+      height: 8px;
+    }
+  }

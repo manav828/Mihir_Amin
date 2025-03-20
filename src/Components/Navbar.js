@@ -10,6 +10,7 @@ function Navbar() {
                     <Link to="/">About</Link>
                     <Link to="/journey">Journey</Link>
                     <Link to="/testimonials">Testimonials</Link>
+                    <Link to="/bookingdemo">Book Meeting</Link>
                 </div>
             </div>
         </nav>
