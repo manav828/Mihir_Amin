@@ -1,0 +1,12 @@
+.i_screen_text {
+    /* flex-flow: column; */
+    /* justify-content: flex-end; */
+    /* align-items: stretch; */
+    width: 100%;
+    max-width: 45%;
+    height: 100%;
+    display: flex
+;
+    position: absolute;
+    inset: 0% 0% auto auto;
+}

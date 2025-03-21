@@ -24,7 +24,7 @@ body {
 
 
 /* Hero Content */
-.container {
+/* .container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -33,10 +33,11 @@ body {
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
-}
+} */
 
 .about-hero-text {
   max-width: 600px;
+  text-align: justify;
 }
 
 .about-hero-title {
@@ -123,7 +124,7 @@ body {
   }
 
   .container {
-      flex-direction: column;
+      flex-direction: column-reverse !important;
       text-align: center;
   }
 
@@ -271,4 +272,80 @@ font-weight: 500;
 
 
 
+
+
+/* last div  */
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust height as needed */
+  background: url('../../public/Images/bg.avif') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.banner-overlay {
+  background-color: rgba(255, 255, 255, 0.2); /* Light overlay */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-logo {
+  width: 60px; /* Adjust as needed */
+  margin-bottom: 15px;
+}
+
+.banner-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  max-width: 600px;
+}
+
+.banner-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.banner-outline-btn,
+.banner-filled-btn {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  border: 2px solid black;
+}
+
+.banner-outline-btn {
+  background: white;
+  color: black;
+}
+
+.banner-filled-btn {
+  background: blue;
+  color: white;
+  border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
 

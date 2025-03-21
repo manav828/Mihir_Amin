@@ -1,9 +1,8 @@
 import { useState, useRef } from "react";
-import "../Styles/Testimonials.css";
-import { canadaUniversity } from "../Data/CanadaUniversity"; // Correct import
-import { usUniversityData } from "../Data/UsUniversity"; // Correct import
+import "bootstrap/dist/css/bootstrap.min.css";
+import { canadaUniversity } from "../Data/CanadaUniversity"; 
+import { usUniversityData } from "../Data/UsUniversity"; 
 
-// Combine both university lists into a single array
 const universityList = [
     ...usUniversityData.Colleges.map(college => college.institution),
     ...canadaUniversity.colleges
@@ -17,42 +16,34 @@ function TestimonialsPage() {
         connectionType: "LinkedIn",
         referral_name: "",
         growthStory: "",
-        currentStatus: "", // Added for storing career & academic status
-        companyName: "", // Added for storing company name
-        role: "", // Added for storing role
+        currentStatus: "",
+        companyName: "",
+        role: "",
     });
 
-    const [filteredUniversities, setFilteredUniversities] = useState([]); // Stores search results
-    const [showDropdown, setShowDropdown] = useState(false); // Controls visibility of dropdown
-    const debounceTimeout = useRef(null); // Store timeout ID
+    const [filteredUniversities, setFilteredUniversities] = useState([]);
+    const [showDropdown, setShowDropdown] = useState(false);
+    const debounceTimeout = useRef(null);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
 
         if (name === "university") {
-            if (value.length > 0) {
-                // Clear the previous timeout to prevent multiple fast executions
-                clearTimeout(debounceTimeout.current);
-
-                // Set a new timeout to trigger after 500ms
-                debounceTimeout.current = setTimeout(() => {
-                    // Filter universities based on user input (case-insensitive)
-                    const filtered = universityList.filter((university) =>
-                        university.toLowerCase().includes(value.toLowerCase())
-                    );
-                    setFilteredUniversities(filtered);
-                    setShowDropdown(true);
-                }, 500); // 500ms debounce delay
-            } else {
-                setShowDropdown(false);
-            }
+            clearTimeout(debounceTimeout.current);
+            debounceTimeout.current = setTimeout(() => {
+                const filtered = universityList.filter((uni) =>
+                    uni.toLowerCase().includes(value.toLowerCase())
+                );
+                setFilteredUniversities(filtered);
+                setShowDropdown(true);
+            }, 500);
         }
     };
 
     const handleSelectUniversity = (university) => {
         setFormData({ ...formData, university });
-        setShowDropdown(false); // Hide dropdown after selection
+        setShowDropdown(false);
     };
 
     const handleSubmit = (e) => {
@@ -61,84 +52,94 @@ function TestimonialsPage() {
     };
 
     return (
-        <div className="page">
-            <div className="form-container">
-                <h2>Share Your Experience</h2>
-                <form onSubmit={handleSubmit}>
-                    <label>Name</label>
-                    <input type="text" name="name" value={formData.name} onChange={handleChange} />
+        <div className="container mt-5">
+            <div className="card shadow p-4">
+                <div className="row">
+                     {/* Right Side - Image */}
+                     <div className="col-md-6 d-flex align-items-center justify-content-center">
+                        <img src="Images/stu_form.jpg" alt="Testimonials" className="img-fluid rounded" />
+                    </div>
+                    {/* Left Side - Form */}
+                    <div className="col-md-6">
+                        <h3 className="text-center mb-3">Share Your Experience</h3>
+                        <form onSubmit={handleSubmit}>
+                            <div className="row g-2">
+                                <div className="col-md-6">
+                                    <label className="form-label text-start d-block">Name</label>
+                                    <input type="text" className="form-control form-control-sm" name="name" value={formData.name} onChange={handleChange} required/>
+                                </div>
+                                <div className="col-md-6">
+                                    <label className="form-label text-start d-block">LinkedIn ID</label>
+                                    <input type="text" className="form-control form-control-sm" name="linkedinID" value={formData.linkedinID} onChange={handleChange} required/>
+                                </div>
+                            </div>
 
-                    <label>LinkedIn ID</label>
-                    <input type="text" name="linkedinID" value={formData.linkedinID} onChange={handleChange} />
+                            <div className="mt-2">
+                                <label className="form-label text-start d-block">University/Institution</label>
+                                <input type="text" className="form-control form-control-sm" name="university" value={formData.university} onChange={handleChange} onFocus={() => setShowDropdown(true)} placeholder="Start typing..." required/>
+                                {showDropdown && filteredUniversities.length > 0 && (
+                                    <ul className="list-group position-absolute w-100">
+                                        {filteredUniversities.map((university, index) => (
+                                            <li key={index} className="list-group-item small" onClick={() => handleSelectUniversity(university)}>
+                                                {university}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </div>
 
-                    <label>Current Professional journey</label>
-                    <select name="currentStatus" value={formData.currentStatus} onChange={handleChange}>
-                        <option value="Looking for Full-time">Looking for Full-time</option>
-                        <option value="Graduated and have a Full-time job">Graduated and have a Full-time job</option>
-                        <option value="Pursuing Master's Degree">Pursuing Master's Degree</option>
-                    </select>
+                            <div className="mt-2">
+                                <label className="form-label text-start d-block">Current Professional Journey</label>
+                                <select className="form-control form-control-sm" name="currentStatus" value={formData.currentStatus} onChange={handleChange} required>
+                                    <option value="">Select</option>
+                                    <option value="Looking for Full-time">Looking for Full-time</option>
+                                    <option value="Graduated and have a Full-time job">Graduated and have a Full-time job</option>
+                                    <option value="Pursuing Master's Degree">Pursuing Master's Degree</option>
+                                </select>
+                            </div>
 
-                    {/* Conditionally render company name and role input fields */}
-                    {formData.currentStatus === "Graduated and have a Full-time job" && (
-                        <>
-                            <label>Company Name</label>
-                            <input
-                                type="text"
-                                name="companyName"
-                                value={formData.companyName}
-                                onChange={handleChange}
-                            />
-                            <label>Role</label>
-                            <input
-                                type="text"
-                                name="role"
-                                value={formData.role}
-                                onChange={handleChange}
-                            />
-                        </>
-                    )}
+                            {formData.currentStatus === "Graduated and have a Full-time job" && (
+                                <div className="row g-2 mt-2">
+                                    <div className="col-md-6">
+                                        <label className="form-label text-start d-block">Company Name</label>
+                                        <input type="text" className="form-control form-control-sm" name="companyName" value={formData.companyName} onChange={handleChange} required/>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <label className="form-label text-start d-block">Role</label>
+                                        <input type="text" className="form-control form-control-sm" name="role" value={formData.role} onChange={handleChange} />
+                                    </div>
+                                </div>
+                            )}
 
-                    <label>University/Institution</label>
-                    <input
-                        type="text"
-                        name="university"
-                        value={formData.university}
-                        onChange={handleChange}
-                        onFocus={() => setShowDropdown(true)}
-                        onBlur={() => setTimeout(() => setShowDropdown(false), 200)} // Delay to allow clicking on options
-                        placeholder="Start typing to search..."
-                    />
-                    {showDropdown && filteredUniversities.length > 0 && (
-                        <ul className="dropdown">
-                            {filteredUniversities.map((university, index) => (
-                                <li key={index} onClick={() => handleSelectUniversity(university)}>
-                                    {university}
-                                </li>
-                            ))}
-                        </ul>
-                    )}
+                            <div className="mt-2">
+                                <label className="form-label text-start d-block">How do you know Mihir?</label>
+                                <select className="form-control form-control-sm" name="connectionType" value={formData.connectionType} onChange={handleChange} required>
+                                    <option value="LinkedIn">LinkedIn</option>
+                                    <option value="Batchmate">Batchmate</option>
+                                    <option value="Colleague">Colleague</option>
+                                    <option value="Referral">Someone referred me</option>
+                                    <option value="Networking Event">Networking event</option>
+                                </select>
+                            </div>
 
-                    <label>How do you know Mihir?</label>
-                    <select name="connectionType" value={formData.connectionType} onChange={handleChange}>
-                        <option value="LinkedIn">LinkedIn</option>
-                        <option value="Batchmate">Batchmate</option>
-                        <option value="Colleague">Colleague</option>
-                        <option value="Referral">Someone referred me</option>
-                        <option value="Networking Event">Networking event</option>
-                    </select>
+                            {formData.connectionType === "Referral" && (
+                                <div className="mt-2">
+                                    <label className="form-label text-start d-block">Name of the person (Who referred)</label>
+                                    <input type="text" className="form-control form-control-sm" name="referral_name" value={formData.referral_name} onChange={handleChange} required />
+                                </div>
+                            )}
 
-                    {formData.connectionType === "Referral" && (
-                        <>
-                            <label>Name of the person (Who referred)</label>
-                            <input type="text" name="referral_name" value={formData.referral_name} onChange={handleChange} />
-                        </>
-                    )}
+                            <div className="mt-2">
+                                <label className="form-label text-start d-block">How did Mihir help you grow professionally?</label>
+                                <textarea className="form-control form-control-sm" rows="3" name="growthStory" value={formData.growthStory} onChange={handleChange}required></textarea>
+                            </div>
 
-                    <label>How did Mihir help you grow professionally?</label>
-                    <textarea name="growthStory" value={formData.growthStory} onChange={handleChange} />
+                            <button type="submit" className="btn btn-primary w-100 mt-3">Share Your Story</button>
+                        </form>
+                    </div>
 
-                    <button type="submit">Share Your Story</button>
-                </form>
+                   
+                </div>
             </div>
         </div>
     );

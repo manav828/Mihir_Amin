@@ -64,6 +64,51 @@ const testimonials = [
     company: "Reeco",
     avatar: "/Images/avatar-yogi.png",
   },
+  {
+    stars: 5,
+    quote: "It's like someone just heated up my cold calls. It's pretty perfect",
+    name: "Anat M.",
+    company: "Bringg",
+    avatar: "/Images/avatar-anat.png",
+  },
+  {
+    stars: 5,
+    quote:
+      "Find qualified candidates faster and streamline your sourcing and engagement.",
+    name: "Yogi K.",
+    company: "Reeco",
+    avatar: "/Images/avatar-yogi.png",
+  },
+  {
+    stars: 5,
+    quote: "It's like someone just heated up my cold calls. It's pretty perfect",
+    name: "Anat M.",
+    company: "Bringg",
+    avatar: "/Images/avatar-anat.png",
+  },
+  {
+    stars: 5,
+    quote:
+      "Find qualified candidates faster and streamline your sourcing and engagement.",
+    name: "Yogi K.",
+    company: "Reeco",
+    avatar: "/Images/avatar-yogi.png",
+  },
+  {
+    stars: 5,
+    quote: "It's like someone just heated up my cold calls. It's pretty perfect",
+    name: "Anat M.",
+    company: "Bringg",
+    avatar: "/Images/avatar-anat.png",
+  },
+  {
+    stars: 5,
+    quote:
+      "Find qualified candidates faster and streamline your sourcing and engagement.",
+    name: "Yogi K.",
+    company: "Reeco",
+    avatar: "/Images/avatar-yogi.png",
+  },
 ];
 
 const Testimonials = () => {

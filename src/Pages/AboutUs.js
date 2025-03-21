@@ -2,6 +2,9 @@ import "../Styles/AboutUs.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Testimonials from "./about_testimonials.js";
 import Footer from "./footer";
+import VideoWithText from "./animated.js";
+import StepCards from "./steps.js";
+
 function AboutUsPage() {
   const cardData = [
     {
@@ -105,8 +108,8 @@ function AboutUsPage() {
     <>
       {/* Hero Section */}
       <section className="about-hero">
-        <div className="container d-flex flex-column flex-md-row align-items-center justify-content-between text-center text-md-start">
-          <div className="about-hero-text">
+        <div className="row container  flex-column-reverse d-flex flex-column flex-md-row align-items-center justify-content-between text-center text-md-start">
+          <div className="col-md-8 about-hero-text">
             <h1 className="about-hero-title">Mihir Amin</h1>
             <p className="about-hero-subtitle">
               Empowering Career Growth Through Guidance and Support
@@ -121,7 +124,7 @@ function AboutUsPage() {
           <img
             src="/Images/mihir.jpg"
             alt="Mihir Amin"
-            className="about-hero-image img-fluid"
+            className="col-md-4 about-hero-image img-fluid my-5 mt-md-0"
           />
         </div>
 
@@ -215,10 +218,51 @@ function AboutUsPage() {
           />
         </section>
 
+
+
+
         {/* Testimonials Section */}
         <Testimonials />
+        <VideoWithText />
+        <section className="banner-container my-5">
+      <div className="banner-overlay">
+        <img src="/Images/logo.png" alt="Logo" className="banner-logo" />
+        <h1 className="banner-heading">Hire top global talent with the click of a button</h1>
+        <div className="banner-buttons">
+          <button className="banner-outline-btn">Create an account</button>
+          <button className="banner-filled-btn">Book a demo</button>
+        </div>
+      </div>
+    </section>
+
+    {/* <div className="step-card">
+      <div className="step-indicator">
+        <div className="circle"></div>
+        <div className="step-label">Step 1</div>
+      </div>
+
+      <div className="icon-container">
+        <img
+          className="icon-image"
+          src="/Images/arrow.svg"
+          alt="3D cube icon representing setup"
+        />
+      </div>
+
+      <h2 className="step-title">Sign up & Profile</h2>
+
+      <p className="step-description">
+        Create your account with our guided setup process. Access your
+        personalized dashboard instantly.
+      </p>
+    </div> */}
+
+      <StepCards />
+
       </div>
         <Footer />
+
+        
     </>
   );
 }
