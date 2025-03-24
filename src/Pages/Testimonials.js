@@ -74,7 +74,7 @@ function TestimonialsPage() {
                                 </div>
                             </div>
 
-                            <div className="mt-2">
+                            {/* <div className="mt-2">
                                 <label className="form-label text-start d-block">University/Institution</label>
                                 <input type="text" className="form-control form-control-sm" name="university" value={formData.university} onChange={handleChange} onFocus={() => setShowDropdown(true)} placeholder="Start typing..." required/>
                                 {showDropdown && filteredUniversities.length > 0 && (
@@ -86,7 +86,46 @@ function TestimonialsPage() {
                                         ))}
                                     </ul>
                                 )}
-                            </div>
+                            </div> */}
+
+<div className="mt-2 position-relative">
+    <label className="form-label text-start d-block">University/Institution</label>
+    <input
+        type="text"
+        className="form-control form-control-sm"
+        name="university"
+        value={formData.university}
+        onChange={handleChange}
+        onFocus={() => setShowDropdown(true)}
+        placeholder="Start typing..."
+        required
+    />
+    {showDropdown && filteredUniversities.length > 0 && (
+        <ul 
+            className="list-group position-absolute w-100" 
+            style={{
+                maxHeight: "200px", // Controls the max height (10 items approx)
+                overflowY: "auto",  // Enables vertical scrolling
+                zIndex: 1000,       // Ensures it appears above other elements
+                background: "white", // Ensures visibility
+                border: "1px solid #ccc",
+                borderRadius: "4px"
+            }}
+        >
+            {filteredUniversities.map((university, index) => (
+                <li
+                    key={index}
+                    className="list-group-item small"
+                    onClick={() => handleSelectUniversity(university)}
+                    style={{ cursor: "pointer" }}
+                >
+                    {university}
+                </li>
+            ))}
+        </ul>
+    )}
+</div>
+
 
                             <div className="mt-2">
                                 <label className="form-label text-start d-block">Current Professional Journey</label>

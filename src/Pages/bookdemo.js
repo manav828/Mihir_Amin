@@ -108,6 +108,7 @@ const BookingPage = () => {
                     className="form-input"
                     value={formData.date}
                     onChange={handleChange}
+                    required
                   />
                 </div>
                 <div>
@@ -120,6 +121,7 @@ const BookingPage = () => {
                         className="form-input"
                         value={formData.timeSlot}
                         onChange={handleChange}
+                        required
                       >
                         <option value="">Select Time Slot</option>
                         {availableSlots.map((slot, index) => (
@@ -155,6 +157,7 @@ const BookingPage = () => {
                     className="form-input"
                     value={formData.name}
                     onChange={handleChange}
+                    required
                   />
                 </div>
                 <div>
@@ -166,6 +169,7 @@ const BookingPage = () => {
                     className="form-input"
                     value={formData.email}
                     onChange={handleChange}
+                    required
                   />
                 </div>
               </div>
@@ -180,6 +184,7 @@ const BookingPage = () => {
                     className="form-input"
                     value={formData.phone}
                     onChange={handleChange}
+                    required
                   />
                 </div>
                 <div>
@@ -191,6 +196,7 @@ const BookingPage = () => {
                     className="form-input"
                     value={formData.location}
                     onChange={handleChange}
+                    required
                   />
                 </div>
               </div>
@@ -203,6 +209,7 @@ const BookingPage = () => {
                 className="form-input"
                 value={formData.linkedin}
                 onChange={handleChange}
+                required
               />
 
 
@@ -228,6 +235,7 @@ const BookingPage = () => {
                     className="form-input"
                     value={formData.jobTitle}
                     onChange={handleChange}
+                    required
                   />
                 </div>
                 <div>
@@ -239,6 +247,7 @@ const BookingPage = () => {
                     className="form-input"
                     value={formData.experience}
                     onChange={handleChange}
+                    required
                   />
                 </div>
               </div>
@@ -251,6 +260,7 @@ const BookingPage = () => {
                 className="form-input"
                 value={formData.skills}
                 onChange={handleChange}
+                required
               />
 
               <button type="button" className="form-btn" onClick={prevStep}>

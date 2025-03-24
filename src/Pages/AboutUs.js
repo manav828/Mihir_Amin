@@ -107,7 +107,7 @@ function AboutUsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="about-hero">
+      <section className="about-hero main">
         <div className="row container  flex-column-reverse d-flex flex-column flex-md-row align-items-center justify-content-between text-center text-md-start">
           <div className="col-md-8 about-hero-text">
             <h1 className="about-hero-title">Mihir Amin</h1>
