@@ -1,7 +1,9 @@
 import { useState, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { canadaUniversity } from "../Data/CanadaUniversity"; 
-import { usUniversityData } from "../Data/UsUniversity"; 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { canadaUniversity } from "../Data/CanadaUniversity";
+import { usUniversityData } from "../Data/UsUniversity";
 
 const universityList = [
     ...usUniversityData.Colleges.map(college => college.institution),
@@ -37,7 +39,7 @@ function TestimonialsPage() {
                 );
                 setFilteredUniversities(filtered);
                 setShowDropdown(true);
-            }, 500);
+            }, 300);
         }
     };
 
@@ -46,86 +48,102 @@ function TestimonialsPage() {
         setShowDropdown(false);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Form Data:", formData);
+
+        try {
+            const response = await fetch("https://mihiramin-production.up.railway.app/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                toast.success("Your story has been submitted successfully!");
+                setFormData({
+                    name: "",
+                    linkedinID: "",
+                    university: "",
+                    connectionType: "LinkedIn",
+                    referral_name: "",
+                    growthStory: "",
+                    currentStatus: "",
+                    companyName: "",
+                    role: "",
+                });
+            } else {
+                const errorData = await response.json();
+                toast.error(`Error: ${errorData.error}`);
+            }
+        } catch (error) {
+            toast.error("Error submitting the form. Please try again.");
+        }
     };
 
     return (
         <div className="container mt-5">
             <div className="card shadow p-4">
                 <div className="row">
-                     {/* Right Side - Image */}
-                     <div className="col-md-6 d-flex align-items-center justify-content-center">
+                    <div className="col-md-6 d-flex align-items-center justify-content-center">
                         <img src="Images/stu_form.jpg" alt="Testimonials" className="img-fluid rounded" />
                     </div>
-                    {/* Left Side - Form */}
                     <div className="col-md-6">
                         <h3 className="text-center mb-3">Share Your Experience</h3>
                         <form onSubmit={handleSubmit}>
                             <div className="row g-2">
                                 <div className="col-md-6">
                                     <label className="form-label text-start d-block">Name</label>
-                                    <input type="text" className="form-control form-control-sm" name="name" value={formData.name} onChange={handleChange} required/>
+                                    <input type="text" className="form-control form-control-sm" name="name" value={formData.name} onChange={handleChange} required />
                                 </div>
                                 <div className="col-md-6">
                                     <label className="form-label text-start d-block">LinkedIn ID</label>
-                                    <input type="text" className="form-control form-control-sm" name="linkedinID" value={formData.linkedinID} onChange={handleChange} required/>
+                                    <input type="text" className="form-control form-control-sm" name="linkedinID" value={formData.linkedinID} onChange={handleChange} required />
                                 </div>
                             </div>
 
-                            {/* <div className="mt-2">
+                            {/* University Field with Scrollable Dropdown */}
+                            <div className="mt-2" style={{ position: "relative" }}>
                                 <label className="form-label text-start d-block">University/Institution</label>
-                                <input type="text" className="form-control form-control-sm" name="university" value={formData.university} onChange={handleChange} onFocus={() => setShowDropdown(true)} placeholder="Start typing..." required/>
+                                <input
+                                    type="text"
+                                    className="form-control form-control-sm"
+                                    name="university"
+                                    value={formData.university}
+                                    onChange={handleChange}
+                                    onFocus={() => setShowDropdown(true)}
+                                    placeholder="Start typing..."
+                                    required
+                                />
                                 {showDropdown && filteredUniversities.length > 0 && (
-                                    <ul className="list-group position-absolute w-100">
+                                    <ul
+                                        className="list-group position-absolute w-100"
+                                        style={{
+                                            maxHeight: "200px", // Show only 10 items, enable scroll
+                                            overflowY: "auto",
+                                            zIndex: 1000,
+                                            backgroundColor: "white",
+                                            border: "1px solid #ccc",
+                                            borderRadius: "5px",
+                                            width: "100%", // Match input width
+                                            listStyle: "none",
+                                            padding: 0,
+                                        }}
+                                    >
                                         {filteredUniversities.map((university, index) => (
-                                            <li key={index} className="list-group-item small" onClick={() => handleSelectUniversity(university)}>
+                                            <li
+                                                key={index}
+                                                className="list-group-item small"
+                                                onClick={() => handleSelectUniversity(university)}
+                                                style={{ cursor: "pointer" }}
+                                            >
                                                 {university}
                                             </li>
                                         ))}
                                     </ul>
                                 )}
-                            </div> */}
-
-<div className="mt-2 position-relative">
-    <label className="form-label text-start d-block">University/Institution</label>
-    <input
-        type="text"
-        className="form-control form-control-sm"
-        name="university"
-        value={formData.university}
-        onChange={handleChange}
-        onFocus={() => setShowDropdown(true)}
-        placeholder="Start typing..."
-        required
-    />
-    {showDropdown && filteredUniversities.length > 0 && (
-        <ul 
-            className="list-group position-absolute w-100" 
-            style={{
-                maxHeight: "200px", // Controls the max height (10 items approx)
-                overflowY: "auto",  // Enables vertical scrolling
-                zIndex: 1000,       // Ensures it appears above other elements
-                background: "white", // Ensures visibility
-                border: "1px solid #ccc",
-                borderRadius: "4px"
-            }}
-        >
-            {filteredUniversities.map((university, index) => (
-                <li
-                    key={index}
-                    className="list-group-item small"
-                    onClick={() => handleSelectUniversity(university)}
-                    style={{ cursor: "pointer" }}
-                >
-                    {university}
-                </li>
-            ))}
-        </ul>
-    )}
-</div>
-
+                            </div>
 
                             <div className="mt-2">
                                 <label className="form-label text-start d-block">Current Professional Journey</label>
@@ -141,7 +159,7 @@ function TestimonialsPage() {
                                 <div className="row g-2 mt-2">
                                     <div className="col-md-6">
                                         <label className="form-label text-start d-block">Company Name</label>
-                                        <input type="text" className="form-control form-control-sm" name="companyName" value={formData.companyName} onChange={handleChange} required/>
+                                        <input type="text" className="form-control form-control-sm" name="companyName" value={formData.companyName} onChange={handleChange} required />
                                     </div>
                                     <div className="col-md-6">
                                         <label className="form-label text-start d-block">Role</label>
@@ -170,16 +188,15 @@ function TestimonialsPage() {
 
                             <div className="mt-2">
                                 <label className="form-label text-start d-block">How did Mihir help you grow professionally?</label>
-                                <textarea className="form-control form-control-sm" rows="3" name="growthStory" value={formData.growthStory} onChange={handleChange}required></textarea>
+                                <textarea className="form-control form-control-sm" rows="3" name="growthStory" value={formData.growthStory} onChange={handleChange} required></textarea>
                             </div>
 
                             <button type="submit" className="btn btn-primary w-100 mt-3">Share Your Story</button>
                         </form>
                     </div>
-
-                   
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 }
