@@ -1,0 +1,15 @@
+.left-cards,
+.right-cards {
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  position: relative;
+}
+
+.middle-card {
+  z-index: 1; /* Ensure the middle card stays above the others */
+}
+
+/* Ensure the cards don't disappear completely */
+.left-cards,
+.right-cards {
+  opacity: 1;
+}

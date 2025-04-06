@@ -92,7 +92,7 @@ body {
 
 .slider-track {
   display: flex;
-  gap: 40px;
+  gap: 95px;
   animation: scroll 25s linear infinite;
   align-items: center;
 }
@@ -232,9 +232,9 @@ body {
 .subtext {
   font-size: 1.1rem;
   color: #666;
-  width: 60%;
+  width: 80%;
   line-height: 1.6;
-  margin: 0 auto 30px;
+  /* margin: 0 auto 30px; */
 }
 
 .yourPerfect img {

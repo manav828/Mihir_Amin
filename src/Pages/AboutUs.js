@@ -317,6 +317,8 @@ import Footer from "./footer";
 import VideoWithText from "./animated.js";
 import StepCards from "./steps.js";
 import Timeline from "./timeline.js";
+import Counter from "./counter.js";
+import FiveCardLayout from "./fivecard.js";
 
 function AboutUsPage() {
   const cardData = [
@@ -522,7 +524,7 @@ function AboutUsPage() {
 
         {/* Your Perfect Section */}
         <section className="yourPerfect">
-          <div className="textContent">
+          <div className="pb-5">
             <div className="head">
               <h1>Find Your Perfect</h1>
               <h1>Candidate - Every Time.</h1>
@@ -558,6 +560,9 @@ function AboutUsPage() {
 
         {/* Step Cards */}
         <StepCards />
+
+            <FiveCardLayout />
+        <Counter />
 
       </div>
 

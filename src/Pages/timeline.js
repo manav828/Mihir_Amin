@@ -182,8 +182,6 @@
 
 
 
-
-
 import React, { useEffect, useRef, useState } from 'react';
 import '../Styles/timeline.css';
 
@@ -218,23 +216,33 @@ const Timeline = () => {
     {
       step: 1,
       heading: "Career Assessment",
-      paragraph: "We begin by evaluating your skills, experience, and goals to create a personalized career roadmap tailored to your aspirations."
+      paragraph: "We begin by evaluating your skills, experience, and goals to create a personalized career roadmap tailored to your aspirations.",
+      // <img src="/Images/c1.svg" alt="Logo 1" className="logo" />
+
+      image: "/Images/timeline.avif", // Replace with actual image path
+      gradient: "linear-gradient(135deg, #f6f7fe 0%, #d8e0ff 100%)",
     },
     {
       step: 2,
       heading: "Skill Development",
-      paragraph: "Enhance your expertise with targeted training and resources designed to bridge gaps and boost your professional capabilities."
+      paragraph: "Enhance your expertise with targeted training and resources designed to bridge gaps and boost your professional capabilities.",
+      image: "/Images/timeline.avif", // Replace with actual image path
+      gradient: "linear-gradient(135deg, #f6f7fe 0%, #c8d4ff 100%)",
     },
     {
       step: 3,
       heading: "Opportunity Matching",
-      paragraph: "Our AI-driven tools connect you with opportunities that align perfectly with your profile and career objectives."
+      paragraph: "Our AI-driven tools connect you with opportunities that align perfectly with your profile and career objectives.",
+      image: "/Images/timeline.avif", // Replace with actual image path
+      gradient: "linear-gradient(135deg, #f6f7fe 0%, #b8c4ff 100%)",
     },
     {
       step: 4,
       heading: "Ongoing Support",
-      paragraph: "Receive continuous guidance and mentorship to navigate challenges and achieve long-term success in your career journey."
-    }
+      paragraph: "Receive continuous guidance and mentorship to navigate challenges and achieve long-term success in your career journey.",
+      image: "/Images/timeline.avif", // Replace with actual image path
+      gradient: "linear-gradient(135deg, #f6f7fe 0%, #a8b4ff 100%)",
+    },
   ];
 
   return (
@@ -262,9 +270,17 @@ const Timeline = () => {
             key={item.step}
             ref={(el) => (boxRefs.current[index] = el)}
             className={`box ${activeStep === item.step ? 'active-box' : ''}`}
+            style={{ background: item.gradient }}
           >
-            <h2>{item.heading}</h2>
-            <p>{item.paragraph}</p>
+            <div className="box-content">
+              <div className="box-text">
+                <h2>{item.heading}</h2>
+                <p>{item.paragraph}</p>
+              </div>
+              <div className="box-image">
+                <img src={item.image} alt={item.heading} />
+              </div>
+            </div>
           </div>
         ))}
       </div>
