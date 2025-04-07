@@ -319,6 +319,7 @@ import StepCards from "./steps.js";
 import Timeline from "./timeline.js";
 import Counter from "./counter.js";
 import FiveCardLayout from "./fivecard.js";
+import ReplexPage from "./mainfooter.js";
 
 function AboutUsPage() {
   const cardData = [
@@ -467,6 +468,26 @@ function AboutUsPage() {
 
       <div className="main">
       <Timeline />
+      <FiveCardLayout />
+   {/* Your Perfect Section */}
+   <section className="yourPerfect">
+          <div className="pb-5">
+            <div className="head">
+              <h1>Find Your Perfect</h1>
+              <h1>Candidate - Every Time.</h1>
+            </div>
+            <div className="subtext">
+              Find the right candidates effortlessly. Collaborate with your team and let AI handle the details. 50% faster hires!
+            </div>
+          </div>
+          <img
+            src="/Images/perfect.png"
+            alt="Find Your Perfect Match"
+            className="about-hero-image img-fluid"
+          />
+        </section>
+
+
         {/* Card Section */}
         <div className="container-md py-5">
           <div className="row g-4">
@@ -522,23 +543,8 @@ function AboutUsPage() {
           </div>
         </section>
 
-        {/* Your Perfect Section */}
-        <section className="yourPerfect">
-          <div className="pb-5">
-            <div className="head">
-              <h1>Find Your Perfect</h1>
-              <h1>Candidate - Every Time.</h1>
-            </div>
-            <div className="subtext">
-              Find the right candidates effortlessly. Collaborate with your team and let AI handle the details. 50% faster hires!
-            </div>
-          </div>
-          <img
-            src="/Images/perfect.png"
-            alt="Find Your Perfect Match"
-            className="about-hero-image img-fluid"
-          />
-        </section>
+     
+        <Counter />
 
         {/* Testimonials Section */}
         <Testimonials testimonials={testimonials} />
@@ -561,10 +567,10 @@ function AboutUsPage() {
         {/* Step Cards */}
         <StepCards />
 
-            <FiveCardLayout />
-        <Counter />
+
 
       </div>
+            <ReplexPage />
 
       {/* Footer */}
       <Footer />
