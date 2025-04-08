@@ -261,12 +261,12 @@
 
 //       <StepCards />
 
-     
+
 
 //       </div>
 //         <Footer />
 
-        
+
 //     </>
 //   );
 // }
@@ -467,10 +467,10 @@ function AboutUsPage() {
       {/* Timeline */}
 
       <div className="main">
-      <Timeline />
-      <FiveCardLayout />
-   {/* Your Perfect Section */}
-   <section className="yourPerfect">
+        <Timeline />
+        <FiveCardLayout />
+        {/* Your Perfect Section */}
+        <section className="yourPerfect">
           <div className="pb-5">
             <div className="head">
               <h1>Find Your Perfect</h1>
@@ -486,6 +486,9 @@ function AboutUsPage() {
             className="about-hero-image img-fluid"
           />
         </section>
+     
+    
+     
 
 
         {/* Card Section */}
@@ -530,7 +533,12 @@ function AboutUsPage() {
             ))}
           </div>
         </div>
-
+        </div>
+        <video className="fullscreen-video" muted autoPlay playsInline loop >
+        <source src="Images/animation.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+        <div className="main">
         {/* Testimonial Quote */}
         <section className="testimonial-container">
           <div className="testimonial-box">
@@ -543,7 +551,7 @@ function AboutUsPage() {
           </div>
         </section>
 
-     
+
         <Counter />
 
         {/* Testimonials Section */}
@@ -570,10 +578,13 @@ function AboutUsPage() {
 
 
       </div>
-            <ReplexPage />
+      <ReplexPage />
 
       {/* Footer */}
       <Footer />
+
+
+      {/* animation here */}
     </>
   );
 }
