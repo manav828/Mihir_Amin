@@ -445,7 +445,6 @@ function AboutUsPage() {
           />
         </div>
 
-        {/* Logo Slider */}
         <div className="logo-slider">
           <div className="slider-track">
             <img src="/Images/c1.svg" alt="Logo 1" className="logo" />
@@ -462,13 +461,19 @@ function AboutUsPage() {
             <img src="/Images/c2.svg" alt="Logo 4" className="logo" />
           </div>
         </div>
-      </section>
+      </section> 
+     
 
       {/* Timeline */}
 
       <div className="main">
         <Timeline />
-        <FiveCardLayout />
+
+      </div>
+
+      {/* <FiveCardLayout /> */}
+      <div className="main">
+
         {/* Your Perfect Section */}
         <section className="yourPerfect">
           <div className="pb-5">
@@ -486,9 +491,9 @@ function AboutUsPage() {
             className="about-hero-image img-fluid"
           />
         </section>
-     
-    
-     
+
+
+
 
 
         {/* Card Section */}
@@ -533,12 +538,17 @@ function AboutUsPage() {
             ))}
           </div>
         </div>
-        </div>
-        <video className="fullscreen-video" muted autoPlay playsInline loop >
-        <source src="Images/animation.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-        <div className="main">
+
+      </div>
+    
+
+<div className="video-container">
+  <video className="fullscreen-video" muted autoPlay playsInline loop>
+    <source src="/Images/animation2.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+      <div className="main">
         {/* Testimonial Quote */}
         <section className="testimonial-container">
           <div className="testimonial-box">

@@ -143,9 +143,9 @@ const WhiteLabelBranding = () => {
       }}
     >
       <div className="text-center mb-5">
-        <h1 className="display-4 fw-bold text-dark mb-3">
+        <h3 className="display-6 fw-bold text-dark mb-3">
           Delivering tailored white-label and branding options to fit your business.
-        </h1>
+        </h3>
         <p className="text-muted">
           Customized options designed to elevate your brand, effectively communicating your unique value proposition to the market.
         </p>

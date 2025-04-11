@@ -1,98 +1,169 @@
-:root {
-    /* Uncomment the theme you want to use */
-
-    /* 🌸 Elegant Soft Pink Theme */
-    /* --bg-color: #FFF5F7;
-    --form-bg: #FDE2E4;
-    --text-color: #4A4A4A;
-    --border-color: #D3A7A2;
-    --button-bg: #FF8BA7;
-    --button-hover: #D67589;
-    --button-text: #FFFFFF;
-    --navbar-bg: #FCE4EC;
-    --navbar-text: #C2185B;
-    --navbar-hover: #880E4F; */
-
-    /* 🔵 Modern Blue & White Theme */
-    --bg-color: #F0F8FF;
-    --form-bg: #E3F2FD;
-    --text-color: #333333;
-    --border-color: #90CAF9;
-    --button-bg: #1976D2;
-    --button-hover: #0D47A1;
-    --button-text: #FFFFFF;
-    --navbar-bg: #FFFFFF;
-    --navbar-text: #4A5568;
-    --navbar-hover: #1A202C;
-
-    /* 🍃 Pastel Mint Green Theme */
-    /* --bg-color: #E8F5E9;
-    --form-bg: #D0F0C0;
-    --text-color: #2E7D32;
-    --border-color: #A5D6A7;
-    --button-bg: #66BB6A;
-    --button-hover: #388E3C;
-    --button-text: #FFFFFF;
-    --navbar-bg: #C8E6C9;
-    --navbar-text: #1B5E20;
-    --navbar-hover: #004D40; */
-
-    /* 🌑 Sleek Dark Mode Theme */
-    /* --bg-color: #121212;
-    --form-bg: #1E1E1E;
-    --text-color: #E0E0E0;
-    --border-color: #424242;
-    --button-bg: #BB86FC;
-    --button-hover: #9B6BFC;
-    --button-text: #FFFFFF;
-    --navbar-bg: #1E1E1E;
-    --navbar-text: #BB86FC;
-    --navbar-hover: #9B6BFC; */
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.navbarr {
-    width: 100%;
+.navbar {
+    background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%);
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: var(--navbar-bg);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center; /* Centers inner content */
-    align-items: center;
-}
-
-.navbar-container {
-    width: 80%;
+  }
+  
+  .navbar-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 0; /* Adjust padding if needed */
-}
-
-.navbar-logo {
-    font-weight: bold;
-    font-size: 1.25rem;
-    color: var(--navbar-text);
-}
-
-.navbar-links {
-    display: flex;
-    gap: 24px;
-}
-
-.navbar-links a {
-    color: var(--navbar-text);
+    position: relative;
+  }
+  
+  /* LOGO */
+  .navbar-logo {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
     text-decoration: none;
-    font-size: 16px;
+    letter-spacing: 2px;
     transition: color 0.3s ease;
-}
-
-.navbar-links a:hover {
-    color: var(--navbar-hover);
-}
+  }
+  
+  .navbar-logo:hover {
+    color: #00ddeb;
+  }
+  
+  /* NAV LINKS */
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .navbar-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .navbar-links a:hover {
+    color: #00ddeb;
+  }
+  
+  .navbar-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #00ddeb;
+    transition: width 0.3s ease;
+  }
+  
+  .navbar-links a:hover::after {
+    width: 100%;
+  }
+  
+  /* CTA BUTTON */
+  .cta-button {
+    background: #00ddeb;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    color: #1a1a2e !important;
+    font-weight: 600;
+  }
+  
+  .cta-button:hover {
+    background: #00b7c2;
+    transform: translateY(-2px);
+  }
+  
+  .cta-button::after {
+    display: none;
+  }
+  
+  /* TOGGLE ICON */
+  .navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  .navbar-toggle-icon,
+  .navbar-toggle-icon::before,
+  .navbar-toggle-icon::after {
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-toggle-icon {
+    position: relative;
+  }
+  
+  .navbar-toggle-icon::before,
+  .navbar-toggle-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+  
+  .navbar-toggle-icon::before {
+    top: -8px;
+  }
+  
+  .navbar-toggle-icon::after {
+    bottom: -8px;
+  }
+  
+  /* MOBILE MENU */
+  @media (max-width: 768px) {
+    .navbar-toggle {
+      display: block;
+    }
+  
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #1a1a2e;
+      padding: 1rem;
+      gap: 1rem;
+      z-index: 999;
+      text-align: center;
+    }
+  
+    .navbar-links.active {
+      display: flex;
+    }
+  
+    .navbar-links a {
+      width: 100%;
+    }
+  
+    .cta-button {
+      width: fit-content;
+      margin: 0 auto;
+    }
+  }
+  
+  /* Small screen adjustments */
+  @media (max-width: 480px) {
+    .navbar-logo {
+      font-size: 1.5rem;
+    }
+  
+    .navbar-container {
+      padding: 0 1rem;
+    }
+  }
+  
