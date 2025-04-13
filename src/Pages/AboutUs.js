@@ -468,8 +468,8 @@ function AboutUsPage() {
 
       <div className="main">
         <Timeline />
-    <FiveCardLayout />
       </div>
+    <FiveCardLayout />
 
       {/* <FiveCardLayout /> */}
       <div className="main">
