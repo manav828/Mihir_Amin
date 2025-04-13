@@ -1023,15 +1023,16 @@ function AboutUsPage() {
               My approach combines strategic guidance with practical insights, enabling professionals to unlock their full potential.
             </p>
             <button className="about-hero-button">Connect with me</button>
+            <button className="m-3 about-hero-button">Book a Meeting</button>
           </div>
           <img
             src="/Images/mihir.jpg"
             alt="Mihir Amin"
-            className="col-md-4 about-hero-image img-fluid my-5 mt-md-0"
+            className="col-md-4 about-hero-image img-fluid my-5 mt-md-0 p-0"
           />
         </div>
 
-        <div className="logo-slider">
+        {/* <div className="logo-slider">
           <div className="slider-track">
             <img src="/Images/c1.svg" alt="Logo 1" className="logo" />
             <img src="/Images/c2.svg" alt="Logo 2" className="logo" />
@@ -1046,7 +1047,7 @@ function AboutUsPage() {
             <img src="/Images/c1.svg" alt="Logo 3" className="logo" />
             <img src="/Images/c2.svg" alt="Logo 4" className="logo" />
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Timeline */}

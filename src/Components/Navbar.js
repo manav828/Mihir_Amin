@@ -296,13 +296,14 @@ function Navbar() {
           backgroundColor: "white",
           padding: "10px 20px",
           margin: "20px auto",
-          width: "90%",
+          width: "40%", //90
           maxWidth: "1200px",
           borderRadius: "50px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          marginTop: "10px",
         }}
       >
         {/* Logo */}
@@ -376,7 +377,7 @@ function Navbar() {
           >
             Home
           </Link>
-          <Link
+          {/* <Link
             to="/#journey"
             className={activeSection === "journey" ? "active" : ""}
             onClick={() => {
@@ -441,8 +442,8 @@ function Navbar() {
             }}
           >
             Candidate Insights
-          </Link>
-          <Link
+          </Link> */}
+          {/* <Link
             to="/#services"
             className={activeSection === "services" ? "active" : ""}
             onClick={() => {
@@ -485,7 +486,7 @@ function Navbar() {
             }}
           >
             Features
-          </Link>
+          </Link> */}
           {/* Testimonials - Styled Differently */}
           <Link
             to="/testimonials"

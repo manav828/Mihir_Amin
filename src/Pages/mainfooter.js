@@ -227,7 +227,7 @@
 
 
 import React from 'react';
-
+import { Link } from "react-router-dom";
 const ReplexPage = () => {
   return (
     <div
@@ -289,7 +289,7 @@ const ReplexPage = () => {
             gap: '15px',
           }}
         >
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/mihir-amin-433103187" target="_blank" rel="noopener noreferrer">
             <div
               style={{
                 width: '40px',
@@ -309,7 +309,7 @@ const ReplexPage = () => {
               />
             </div>
           </a>
-          <a href="https://x.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/MihirAmin323" target="_blank" rel="noopener noreferrer">
             <div
               style={{
                 width: '40px',
@@ -329,7 +329,7 @@ const ReplexPage = () => {
               />
             </div>
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/mihir_amin219/" target="_blank" rel="noopener noreferrer">
             <div
               style={{
                 width: '40px',
@@ -378,7 +378,7 @@ const ReplexPage = () => {
         >
           Email
           <br />
-          <span style={{ color: '#6b5b95' }}>hello@weblisty.com</span>
+          <span style={{ color: '#6b5b95' }}>mihir.amin323@gmail.com</span>
         </button>
         <button
           style={{
@@ -396,7 +396,15 @@ const ReplexPage = () => {
         >
           Call
           <br />
-          <span style={{ color: '#6b5b95' }}>Schedule a call</span>
+          <span style={{ color: '#6b5b95' }}><Link
+            to="/bookingdemo"
+            // onClick={() => setIsMenuOpen(false)}
+            className=""
+            style={{textDecoration: "none"}}
+            
+          >
+            <span style={{ color: '#6b5b95',textDecoration: "none", }}>Book Meeting</span>
+          </Link></span>
         </button>
         <button
           style={{
@@ -414,12 +422,12 @@ const ReplexPage = () => {
         >
           Location
           <br />
-          <span style={{ color: '#6b5b95' }}>Get Direction</span>
+          <span style={{ color: '#6b5b95' }}>50 STONE Mill DR SE, Cartersville, Georgia, 30121</span>
         </button>
       </div>
 
       {/* Navigation Bar */}
-      <div
+      {/* <div
         style={{
           display: 'flex',
           justifyContent: 'center',
@@ -447,7 +455,7 @@ const ReplexPage = () => {
             {item}
           </button>
         ))}
-      </div>
+      </div> */}
 
       {/* Footer */}
       <div
