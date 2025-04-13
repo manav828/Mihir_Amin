@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="col-md-4 mb-3">
             <h5>About Us</h5>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis.
+            Empowering Career Growth Through Guidance and Support
             </p>
           </div>
 

@@ -1050,17 +1050,17 @@ function AboutUsPage() {
       </section>
 
       {/* Timeline */}
-      <div className="main">
+      {/* <div className="main">
         <section id="journey">
           <Timeline />
         </section>
-      </div>
+      </div> */}
 
-      <FiveCardLayout />
+      {/* <FiveCardLayout /> */}
 
       <div className="main">
         {/* Your Perfect Section */}
-        <section id="perfect-candidate" className="yourPerfect">
+        {/* <section id="perfect-candidate" className="yourPerfect">
           <div className="pb-5">
             <div className="head">
               <h1>Find Your Perfect</h1>
@@ -1075,10 +1075,10 @@ function AboutUsPage() {
             alt="Find Your Perfect Match"
             className="img-fluid"
           />
-        </section>
+        </section> */}
 
         {/* Card Section */}
-        <section id="candidate-insights">
+        {/* <section id="candidate-insights">
           <div className="container-md py-5">
             <div className="row g-4">
               {cardData.map((card, index) => (
@@ -1120,26 +1120,26 @@ function AboutUsPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
 
-      <section id="services">
+      {/* <section id="services">
         <BrandingHero />
-      </section>
+      </section> */}
 
-      <section id="features">
+      {/* <section id="features">
         <BrandingLogo />
-      </section>
+      </section> */}
 
-      <div className="video-container">
+      {/* <div className="video-container">
         <video className="fullscreen-video" muted autoPlay playsInline loop>
           <source src="/Images/animation2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </div>
+      </div> */}
 
-      <div className="main">
-        {/* Testimonial Quote */}
+      {/* <div className="main">
+         Testimonial Quote 
         <section className="testimonial-container">
           <div className="testimonial-box">
             <div className="quote-mark">❝</div>
@@ -1149,16 +1149,16 @@ function AboutUsPage() {
             </p>
             <p className="testimonial-company">Reeco</p>
           </div>
-        </section>
+        </section> */}
 
-        <Counter />
+        {/* <Counter /> */}
 
         {/* Testimonials Section */}
-        <Testimonials testimonials={testimonials} />
+        {/* <Testimonials testimonials={testimonials} /> */}
 
         {/* Video With Text */}
-        <VideoWithText />
-      </div>
+        {/* <VideoWithText /> */}
+      {/* </div> */}
 
       <ReplexPage />
 

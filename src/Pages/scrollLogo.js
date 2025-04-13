@@ -135,7 +135,7 @@ const BrandingLogo = () => {
       </div>
 
       {/* Original BrandingLogo Content */}
-      <div className="d-flex flex-column min-vh-100 py-5 px-3">
+      {/* <div className="d-flex flex-column min-vh-100 py-5 px-3">
         <div className="container">
           <div className="d-flex justify-content-center mb-4">
             <div className="d-flex align-items-center bg-light text-dark px-3 py-2 rounded-pill gap-2">
@@ -175,7 +175,7 @@ const BrandingLogo = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

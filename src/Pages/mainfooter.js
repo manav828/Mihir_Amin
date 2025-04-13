@@ -278,7 +278,7 @@ const ReplexPage = () => {
             padding: '0 15px', // Prevent text overflow
           }}
         >
-          Replex, your automated response solution for seamless interactions.
+          Empowering Career Growth Through Guidance and Support
         </h1>
 
         {/* Social Media Icons */}
