@@ -468,7 +468,7 @@ function AboutUsPage() {
 
       <div className="main">
         <Timeline />
-
+    <FiveCardLayout />
       </div>
 
       {/* <FiveCardLayout /> */}
