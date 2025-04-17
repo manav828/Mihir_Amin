@@ -391,6 +391,17 @@ function TestimonialsPage() {
                             {/* Company Name and Role fields moved outside the dropdown condition */}
                             <div className="row g-2 mt-2">
                                 <div className="col-12">
+                                    <label className="form-label text-start d-block">Role</label>
+                                    <input
+                                        type="text"
+                                        className="form-control form-control-sm"
+                                        name="role"
+                                        value={formData.role}
+                                        onChange={handleChange}
+                                        placeholder="Software Developer "
+                                    />
+                                </div>
+                                <div className="col-12">
                                     <label className="form-label text-start d-block">What other companies have you received interview calls from?</label>
                                     <input
                                         type="text"
@@ -402,17 +413,7 @@ function TestimonialsPage() {
                                         placeholder="Amazon,Google,...."
                                     />
                                 </div>
-                                <div className="col-12">
-                                    <label className="form-label text-start d-block">Role</label>
-                                    <input
-                                        type="text"
-                                        className="form-control form-control-sm"
-                                        name="role"
-                                        value={formData.role}
-                                        onChange={handleChange}
-                                        placeholder="Software Developer "
-                                    />
-                                </div>
+
                             </div>
 
                             <div className="mt-2">
